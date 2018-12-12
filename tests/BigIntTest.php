@@ -50,4 +50,11 @@ class BigIntTest extends TestCase
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->div($bigInt2), new BigInt('1'));
     }
+
+    public function testModWorks(): void
+    {
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt('654321');
+        $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('123456'));
+    }
 }

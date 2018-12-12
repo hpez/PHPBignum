@@ -155,4 +155,33 @@ class BigInt
 
         return $this;
     }
+
+    /**
+     * @param BigInt $modNum
+     * @return BigInt
+     */
+    public function mod($modNum)
+    {
+        if ($modNum->isBiggerThan($this))
+            return $this;
+
+        $quotient = new BigInt('');
+        $now = new BigInt(substr($this->number, 0, $modNum->length()));
+        $next = $modNum->length();
+        do {
+            $count = 0;
+            while ($modNum <= $now) {
+                $now->sub($modNum);
+                $count++;
+            }
+            $quotient->rightPush(strval($count));
+            if ($next < $modNum->length())
+                $now->rightPush($this->number[$next]);
+            $next++;
+        } while($next < $modNum->length());
+
+        $this->number = $now->number;
+
+        return $this;
+    }
 }
