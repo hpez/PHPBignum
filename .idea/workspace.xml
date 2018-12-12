@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e81fc79-6d94-48c0-8b1c-e9a29a00d187" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BigIntTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BigIntTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,17 +16,17 @@
       <file leaf-file-name="BigInt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BigInt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="-165">
               <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="268">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#30#53#0#PHP" expanded="true" />
               </folding>
@@ -48,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -75,8 +75,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/BigInt.php" />
-        <option value="$PROJECT_DIR$/tests/BigIntTest.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tests/BigIntTest.php" />
       </list>
     </option>
   </component>
@@ -157,12 +157,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.BigIntTest.testIsLesserThanWorks">
     <configuration name="BigIntTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" directory="$PROJECT_DIR$/tests" file="$PROJECT_DIR$/tests/BigIntTest.php" />
     </configuration>
+    <configuration name="BigIntTest.testIsLesserThanWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testIsLesserThanWorks" scope="Method" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.BigIntTest" />
+      <item itemvalue="PHPUnit.BigIntTest.testIsLesserThanWorks" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.BigIntTest.testIsLesserThanWorks" />
         <item itemvalue="PHPUnit.BigIntTest" />
       </list>
     </recent_temporary>
@@ -180,14 +188,11 @@
       <workItem from="1544379106771" duration="2216000" />
       <workItem from="1544426481689" duration="3815000" />
       <workItem from="1544613265866" duration="6000" />
-      <workItem from="1544614597683" duration="4412000" />
+      <workItem from="1544614597683" duration="4810000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BigIntTest - 2018.12.12 at 20h 38m 52s.xml">
-      <configuration name="BigIntTest" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="BigIntTest - 2018.12.12 at 20h 39m 41s.xml">
       <configuration name="BigIntTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -215,22 +220,25 @@
     <history-entry file="BigIntTest - 2018.12.12 at 20h 46m 18s.xml">
       <configuration name="BigIntTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="BigIntTest_testIsLesserThanWorks - 2018.12.12 at 20h 53m 05s.xml">
+      <configuration name="BigIntTest.testIsLesserThanWorks" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10449000" />
+    <option name="totallyTimeSpent" value="10847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24942264" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24942264" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.328594" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.328594" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.328594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -303,30 +311,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#53#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

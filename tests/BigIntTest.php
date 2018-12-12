@@ -13,4 +13,12 @@ class BigIntTest extends TestCase
     {
         $this->assertInstanceOf(BigInt::class, new BigInt('12345678901234567890'));
     }
+
+    public function testIsLesserThanWorks(): void
+    {
+        $this->assertTrue((new BigInt('1234567890'))->isLesserThan(new BigInt('1234567891')));
+        $this->assertTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('12345678900')));
+        $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567891')));
+        $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567890')));
+    }
 }
