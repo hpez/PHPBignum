@@ -89,7 +89,7 @@ class BigInt
         $carry = 0;
         for ($i = strlen($addNumString)-1; $i >= 0; $i--) {
             $value = (intval($this->number[$i]) + intval($addNumString[$i] + $carry)) % 10;
-            $carry = (intval($this->number[$i]) + intval($addNumString[$i] + $carry)) / 10;
+            $carry = floor((intval($this->number[$i]) + intval($addNumString[$i] + $carry)) / 10);
             $this->number[$i] = $value;
         }
         if ($carry != 0)

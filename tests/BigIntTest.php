@@ -29,4 +29,11 @@ class BigIntTest extends TestCase
         $this->assertNotTrue((new BigInt('1234567891'))->isBiggerThan(new BigInt('1234567891')));
         $this->assertNotTrue((new BigInt('1234567890'))->isBiggerThan(new BigInt('1234567891')));
     }
+
+    public function testAddWorks(): void
+    {
+        $bigInt1 = new BigInt('123456');
+        $bigInt2 = new BigInt('654321');
+        $this->assertEquals($bigInt1->add($bigInt2), new BigInt('777777'));
+    }
 }
