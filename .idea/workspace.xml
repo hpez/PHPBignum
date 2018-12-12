@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e81fc79-6d94-48c0-8b1c-e9a29a00d187" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigInt.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigInt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BigIntTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BigIntTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BigInt.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BigInt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BigInt.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -24,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="313">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding>
                 <element signature="e#30#53#0#PHP" expanded="true" />
               </folding>
@@ -77,8 +75,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/tests/BigIntTest.php" />
         <option value="$PROJECT_DIR$/src/BigInt.php" />
+        <option value="$PROJECT_DIR$/tests/BigIntTest.php" />
       </list>
     </option>
   </component>
@@ -159,7 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.BigIntTest.testAddWorks">
+  <component name="RunManager" selected="PHPUnit.BigIntTest.testSubWorks">
     <configuration name="BigIntTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" directory="$PROJECT_DIR$/tests" file="$PROJECT_DIR$/tests/BigIntTest.php" />
     </configuration>
@@ -172,14 +170,19 @@
     <configuration name="BigIntTest.testIsLesserThanWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testIsLesserThanWorks" scope="Method" />
     </configuration>
+    <configuration name="BigIntTest.testSubWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testSubWorks" scope="Method" />
+    </configuration>
     <list>
       <item itemvalue="PHPUnit.BigIntTest" />
       <item itemvalue="PHPUnit.BigIntTest.testIsLesserThanWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testIsBiggerThanWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testAddWorks" />
+      <item itemvalue="PHPUnit.BigIntTest.testSubWorks" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.BigIntTest.testSubWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testAddWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testIsBiggerThanWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testIsLesserThanWorks" />
@@ -200,17 +203,11 @@
       <workItem from="1544379106771" duration="2216000" />
       <workItem from="1544426481689" duration="3815000" />
       <workItem from="1544613265866" duration="6000" />
-      <workItem from="1544614597683" duration="5460000" />
+      <workItem from="1544614597683" duration="5558000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BigIntTest_testIsLesserThanWorks - 2018.12.12 at 20h 53m 05s.xml">
-      <configuration name="BigIntTest.testIsLesserThanWorks" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="BigIntTest_testIsLesserThanWorks - 2018.12.12 at 20h 55m 18s.xml">
-      <configuration name="BigIntTest.testIsLesserThanWorks" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="BigIntTest_testIsBiggerThanWorks - 2018.12.12 at 20h 57m 02s.xml">
       <configuration name="BigIntTest.testIsBiggerThanWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -235,9 +232,15 @@
     <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 05m 06s.xml">
       <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 06m 06s.xml">
+      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigIntTest_testSubWorks - 2018.12.12 at 21h 07m 16s.xml">
+      <configuration name="BigIntTest.testSubWorks" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11497000" />
+    <option name="totallyTimeSpent" value="11595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -333,20 +336,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#30#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BigInt.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="91" column="28" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="e#30#53#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
