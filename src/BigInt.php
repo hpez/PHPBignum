@@ -146,11 +146,12 @@ class BigInt
                 $count++;
             }
             $quotient->rightPush(strval($count));
-            $now->rightPush($this->number[$next]);
+            if ($next < $divNum->length())
+                $now->rightPush($this->number[$next]);
             $next++;
         } while($next < $divNum->length());
 
-        $this->number = $quotient;
+        $this->number = $quotient->number;
 
         return $this;
     }
