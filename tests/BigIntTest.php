@@ -2,7 +2,7 @@
 
 namespace hpez\Tests;
 
-require __DIR__.'/../bignum/BigInt.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use hpez\bignum\BigInt;
 use PHPUnit\Framework\TestCase;

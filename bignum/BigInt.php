@@ -4,19 +4,8 @@ namespace hpez\bignum;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-class BigInt
+class BigInt extends BigNum
 {
-    protected $number;
-
-    /**
-     * BigInt constructor.
-     * @param string $number
-     */
-    public function __construct($number)
-    {
-        $this->number = $number;
-    }
-
     /**
      * @param BigInt $cmpNum
      * @return bool
@@ -55,14 +44,6 @@ class BigInt
                     return false;
 
         return false;
-    }
-
-    /**
-     * @return int
-     */
-    protected function length()
-    {
-        return strlen($this->number);
     }
 
     /**
