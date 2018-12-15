@@ -69,7 +69,8 @@ class BigInt extends BigNum
     public function add($addNum)
     {
         $addNumString = $addNum->number;
-        for ($i = 0; $i < $this->length() - strlen($addNumString); $i++)
+        $diff = $this->length() - strlen($addNumString);
+        for ($i = 0; $i < $diff; $i++)
             $addNumString = '0'.$addNumString;
 
         $diff = strlen($addNumString) - $this->length();
