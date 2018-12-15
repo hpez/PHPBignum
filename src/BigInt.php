@@ -74,6 +74,14 @@ class BigInt
     }
 
     /**
+     * @param string $digit
+     */
+    protected function leftPush($digit)
+    {
+        $this->number = $digit.$this->number;
+    }
+
+    /**
      * @param BigInt $addNum
      * @return BigInt
      */
@@ -83,7 +91,8 @@ class BigInt
         for ($i = 0; $i < $this->length() - strlen($addNumString); $i++)
             $addNumString = '0'.$addNumString;
 
-        for ($i = 0; $i < strlen($addNumString) - $this->length(); $i++)
+        $diff = strlen($addNumString) - $this->length();
+        for ($i = 0; $i < $diff; $i++)
             $this->number = '0'.$this->number;
 
         $carry = 0;
@@ -181,6 +190,32 @@ class BigInt
         } while($next < $modNum->length());
 
         $this->number = $now->number;
+
+        return $this;
+    }
+
+    /**
+     * @param BigInt $multiplyNum
+     * @return BigInt
+     */
+    public function multiply($multiplyNum)
+    {
+        $result = new BigInt('0');
+        for ($i = $this->length()-1; $i >= 0; $i--) {
+            $carry = 0;
+            $digitRes = new BigInt('');
+            for ($j = $multiplyNum->length()-1; $j > $i; $j--)
+                $digitRes->rightPush('0');
+            for ($j = $multiplyNum->length()-1; $j >= 0; $j--) {
+                $value = (intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) % 10;
+                $carry = floor((intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) / 10);
+                $digitRes->leftPush($value);
+            }
+            if ($carry != 0)
+                $digitRes->leftPush($carry);
+            $result->add($digitRes);
+        }
+        $this->number = $result->number;
 
         return $this;
     }

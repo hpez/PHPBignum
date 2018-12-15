@@ -57,4 +57,11 @@ class BigIntTest extends TestCase
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('123456'));
     }
+
+    public function testMultiplyWorks(): void
+    {
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt('654321');
+        $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('508915824417'));
+    }
 }

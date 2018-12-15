@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e81fc79-6d94-48c0-8b1c-e9a29a00d187" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PHPBignum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PHPBignum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BigInt.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigInt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BigIntTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BigIntTest.php" afterDir="false" />
     </list>
@@ -12,25 +14,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BigInt.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BigInt.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BigInt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="165" column="25" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
+            <state relative-caret-position="313">
+              <caret line="215" selection-start-line="215" selection-end-line="215" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BigIntTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-              <folding>
-                <element signature="e#30#53#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="64" column="82" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -76,8 +78,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/BigInt.php" />
         <option value="$PROJECT_DIR$/tests/BigIntTest.php" />
+        <option value="$PROJECT_DIR$/src/BigInt.php" />
       </list>
     </option>
   </component>
@@ -88,11 +90,40 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/composer.json" />
-    </packageJsonPaths>
+    <packageJsonPaths />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+    </include_path>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="77" />
     <option name="y" value="47" />
@@ -116,6 +147,36 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="PHPBignum" type="cbb8eebc:String" user="PHPBignum" />
               <item name="tests" type="cbb8eebc:String" user="tests" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="home" type="cbb8eebc:String" user="home" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="home" type="cbb8eebc:String" user="home" />
+              <item name="hassan" type="cbb8eebc:String" user="hassan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="home" type="cbb8eebc:String" user="home" />
+              <item name="hassan" type="cbb8eebc:String" user="hassan" />
+              <item name="Codes" type="cbb8eebc:String" user="Codes" />
             </path>
           </expand>
           <select />
@@ -158,36 +219,36 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.BigIntTest.testModWorks">
+  <component name="RunManager" selected="PHPUnit.BigIntTest.testMultiplyWorks">
     <configuration name="BigIntTest.testAddWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testAddWorks" scope="Method" />
     </configuration>
     <configuration name="BigIntTest.testDivWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testDivWorks" scope="Method" />
     </configuration>
-    <configuration name="BigIntTest.testIsBiggerThanWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testIsBiggerThanWorks" scope="Method" />
-    </configuration>
     <configuration name="BigIntTest.testModWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testModWorks" scope="Method" />
+    </configuration>
+    <configuration name="BigIntTest.testMultiplyWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testMultiplyWorks" scope="Method" />
     </configuration>
     <configuration name="BigIntTest.testSubWorks" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="hpez\Tests\BigIntTest" file="$PROJECT_DIR$/tests/BigIntTest.php" method="testSubWorks" scope="Method" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.BigIntTest.testIsBiggerThanWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testAddWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testSubWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testDivWorks" />
       <item itemvalue="PHPUnit.BigIntTest.testModWorks" />
+      <item itemvalue="PHPUnit.BigIntTest.testMultiplyWorks" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.BigIntTest.testMultiplyWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testModWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testDivWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testSubWorks" />
         <item itemvalue="PHPUnit.BigIntTest.testAddWorks" />
-        <item itemvalue="PHPUnit.BigIntTest.testIsBiggerThanWorks" />
       </list>
     </recent_temporary>
   </component>
@@ -204,59 +265,62 @@
       <workItem from="1544379106771" duration="2216000" />
       <workItem from="1544426481689" duration="3815000" />
       <workItem from="1544613265866" duration="6000" />
-      <workItem from="1544614597683" duration="6090000" />
+      <workItem from="1544614597683" duration="6782000" />
+      <workItem from="1544778612453" duration="15000" />
+      <workItem from="1544858880233" duration="3085000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 03m 52s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 44m 03s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 04m 23s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 50m 57s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 04m 35s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 52m 28s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 04m 40s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 54m 51s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 05m 06s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 55m 00s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testAddWorks - 2018.12.12 at 21h 06m 06s.xml">
-      <configuration name="BigIntTest.testAddWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 55m 14s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testSubWorks - 2018.12.12 at 21h 07m 16s.xml">
-      <configuration name="BigIntTest.testSubWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 55m 45s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testDivWorks - 2018.12.12 at 21h 08m 42s.xml">
-      <configuration name="BigIntTest.testDivWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 56m 24s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testDivWorks - 2018.12.12 at 21h 10m 53s.xml">
-      <configuration name="BigIntTest.testDivWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 57m 51s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="BigIntTest_testDivWorks - 2018.12.12 at 21h 11m 28s.xml">
-      <configuration name="BigIntTest.testDivWorks" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="BigIntTest_testMultiplyWorks - 2018.12.15 at 11h 58m 51s.xml">
+      <configuration name="BigIntTest.testMultiplyWorks" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12127000" />
+    <option name="totallyTimeSpent" value="15919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24942264" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.328594" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.328594" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24942264" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328594" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -265,7 +329,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +338,68 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="13" lean-forward="true" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BigInt.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1755">
@@ -320,13 +445,6 @@
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -337,20 +455,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="165" column="25" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/BigIntTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-          <folding>
-            <element signature="e#30#53#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="64" column="82" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
         </state>
       </provider>
     </entry>
