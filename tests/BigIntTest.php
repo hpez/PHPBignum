@@ -2,9 +2,9 @@
 
 namespace hpez\Tests;
 
-require __DIR__.'/../src/BigInt.php';
+require __DIR__.'/../bignum/BigInt.php';
 
-use hpez\BigNum\BigInt;
+use hpez\bignum\BigInt;
 use PHPUnit\Framework\TestCase;
 
 class BigIntTest extends TestCase

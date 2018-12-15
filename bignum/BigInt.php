@@ -1,6 +1,6 @@
 <?php
 
-namespace hpez\BigNum;
+namespace hpez\bignum;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
