@@ -3,4 +3,4 @@ php:
   - '7.1'
 install: composer update
 after_script:
-  - phpunit tests/
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit tests/
