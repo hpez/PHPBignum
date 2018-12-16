@@ -2,5 +2,5 @@ language: php
 php: 
   - '7.1'
 install: composer update
-after_script:
-  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit tests/
+script:
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit $TRAVIS_BUILD_DIR/tests/
