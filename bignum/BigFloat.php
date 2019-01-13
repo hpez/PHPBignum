@@ -57,4 +57,43 @@ class BigFloat extends BigNum
 
         return $this;
     }
+
+    /**
+     * @param BigFloat $subNum
+     * @return BigFloat
+     */
+    public function sub($subNum)
+    {
+        $subNumString = $subNum->number;
+        $diff = $this->decLength() - $subNum->decLength();
+        for ($i = 0; $i < $diff; $i++)
+            $subNumString .= '0';
+
+        $diff = $subNum->decLength() - $this->decLength();
+        for ($i = 0; $i < $diff; $i++)
+            $this->number .= '0';
+
+        $diff = $this->intLength() - $subNum->intLength();
+        for ($i = 0; $i < $diff; $i++)
+            $subNumString = '0'.$subNumString;
+
+        $diff = $subNum->intLength() - $this->intLength();
+        for ($i = 0; $i < $diff; $i++)
+            $this->number = '0'.$this->number;
+
+        $carry = 0;
+        for ($i = strlen($subNumString)-1; $i >= 0; $i--) {
+            if ($this->number[$i] != '.') {
+                $value = (intval($this->number[$i]) - intval($subNumString[$i] + $carry));
+                if ($value < 0) {
+                    $carry = 1;
+                    $value += 10;
+                } else
+                    $carry = 0;
+                $this->number[$i] = $value;
+            }
+        }
+
+        return $this;
+    }
 }

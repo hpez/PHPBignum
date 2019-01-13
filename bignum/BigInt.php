@@ -104,7 +104,7 @@ class BigInt extends BigNum
 
         $carry = 0;
         for ($i = strlen($subNumString)-1; $i >= 0; $i--) {
-            $value = (intval($this->number[$i]) - intval($subNumString[$i] - $carry));
+            $value = (intval($this->number[$i]) - intval($subNumString[$i] + $carry));
             if ($value < 0) {
                 $carry = 1;
                 $value += 10;
