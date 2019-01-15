@@ -5,3 +5,6 @@ A bignum library for PHP 7.1.
 | ------------- |---------------|---------------|---------------|----------------|----------------|----------------|
 | BigInt        | done          | done          | done          | done           | pending        | pending        |
 | BigFloat      | done          | done          | pending       | pending        | pending        | pending        |
+
+## Getting started
+Just clone the project, go to the project directory and run `composer install` and should be good to go! Oh and also for running tests you should do `vendor/phpunit/phpunit/phpunit tests/`.
