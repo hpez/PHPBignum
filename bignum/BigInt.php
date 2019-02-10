@@ -7,11 +7,13 @@ require_once __DIR__.'/../vendor/autoload.php';
 class BigInt extends BigNum
 {
     /**
-     * @param BigInt $cmpNum
+     * @param BigInt|string|integer $cmpNum
      * @return bool
      */
     public function isLesserThan($cmpNum)
     {
+        if (gettype($cmpNum) == 'string' || gettype($cmpNum) == 'integer')
+            $cmpNum = new BigInt($cmpNum);
         if ($this->length() < $cmpNum->length())
             return true;
         elseif ($cmpNum->length() < $this->length())
@@ -27,11 +29,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $cmpNum
+     * @param BigInt|string|integer $cmpNum
      * @return bool
      */
     public function isBiggerThan($cmpNum)
     {
+        if (gettype($cmpNum) == 'string' || gettype($cmpNum) == 'integer')
+            $cmpNum = new BigInt($cmpNum);
         if ($this->length() > $cmpNum->length())
             return true;
         elseif ($cmpNum->length() > $this->length())
@@ -63,11 +67,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $addNum
+     * @param BigInt|string|integer $addNum
      * @return BigInt
      */
     public function add($addNum)
     {
+        if (gettype($addNum) == 'string' || gettype($addNum) == 'integer')
+            $addNum = new BigInt($addNum);
         $addNumString = $addNum->number;
         $diff = $this->length() - strlen($addNumString);
         for ($i = 0; $i < $diff; $i++)
@@ -90,11 +96,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $subNum
+     * @param BigInt|string|integer $subNum
      * @return BigInt
      */
     public function sub($subNum)
     {
+        if (gettype($subNum) == 'string' || gettype($subNum) == 'integer')
+            $subNum = new BigInt($subNum);
         $subNumString = $subNum->number;
         for ($i = 0; $i < $this->length() - strlen($subNumString); $i++)
             $subNumString = '0'.$subNumString;
@@ -117,11 +125,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $divNum
+     * @param BigInt|string|integer $divNum
      * @return BigInt
      */
     public function div($divNum)
     {
+        if (gettype($divNum) == 'string' || gettype($divNum) == 'integer')
+            $divNum = new BigInt($divNum);
         if ($divNum->isBiggerThan($this)) {
             $this->number = '0';
             return $this;
@@ -148,11 +158,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $modNum
+     * @param BigInt|string|integer $modNum
      * @return BigInt
      */
     public function mod($modNum)
     {
+        if (gettype($modNum) == 'string' || gettype($modNum) == 'integer')
+            $modNum = new BigInt($modNum);
         if ($modNum->isBiggerThan($this))
             return $this;
 
@@ -177,11 +189,13 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param BigInt $multiplyNum
+     * @param BigInt|string|integer $multiplyNum
      * @return BigInt
      */
     public function multiply($multiplyNum)
     {
+        if (gettype($multiplyNum) == 'string' || gettype($multiplyNum) == 'integer')
+            $multiplyNum = new BigInt($multiplyNum);
         $result = new BigInt('0');
         for ($i = $this->length()-1; $i >= 0; $i--) {
             $carry = 0;

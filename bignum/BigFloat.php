@@ -22,11 +22,13 @@ class BigFloat extends BigNum
     }
 
     /**
-     * @param BigFloat $addNum
+     * @param BigFloat|string|double $addNum
      * @return BigFloat
      */
     public function add($addNum)
     {
+        if (gettype($addNum) == 'string' || gettype($addNum) == 'double')
+            $addNum = new BigFloat($addNum);
         $addNumString = $addNum->number;
         $diff = $this->decLength() - $addNum->decLength();
         for ($i = 0; $i < $diff; $i++)
@@ -59,11 +61,13 @@ class BigFloat extends BigNum
     }
 
     /**
-     * @param BigFloat $subNum
+     * @param BigFloat|string|double $subNum
      * @return BigFloat
      */
     public function sub($subNum)
     {
+        if (gettype($subNum) == 'string' || gettype($subNum) == 'double')
+            $subNum = new BigFloat($subNum);
         $subNumString = $subNum->number;
         $diff = $this->decLength() - $subNum->decLength();
         for ($i = 0; $i < $diff; $i++)

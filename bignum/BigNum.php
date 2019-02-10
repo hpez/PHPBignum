@@ -10,11 +10,11 @@ class BigNum
 
     /**
      * BigNum constructor.
-     * @param string $number
+     * @param string|integer|double $number
      */
     public function __construct($number)
     {
-        $this->number = $number;
+        $this->number = strval($number);
     }
 
     /**
