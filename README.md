@@ -3,7 +3,7 @@ A bignum library for PHP 7.1.
 
 | Type          | Addition      | Subtraction   | Division      | Multiplication | Square root    | Power          |
 | ------------- |---------------|---------------|---------------|----------------|----------------|----------------|
-| BigInt        | done          | done          | done          | done           | pending        | pending        |
+| BigInt        | done          | done          | done          | done           | pending        | done           |
 | BigFloat      | done          | done          | pending       | pending        | pending        | pending        |
 
 ## Getting started
