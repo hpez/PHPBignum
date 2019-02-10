@@ -64,4 +64,17 @@ class BigIntTest extends TestCase
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('508915824417'));
     }
+
+    public function testPowWorks(): void
+    {
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt('1');
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('777777'));
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt('2');
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('604937061729'));
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt(3);
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('470506133060396433'));
+    }
 }
