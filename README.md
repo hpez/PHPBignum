@@ -1,4 +1,4 @@
-# PHPBignum [![Build Status](https://travis-ci.org/hpez/PHPBignum.svg?branch=master)](https://travis-ci.org/hpez/PHPBignum)
+# PHPBignum [![Build Status](https://travis-ci.org/hpez/PHPBignum.svg?branch=master)](https://travis-ci.org/hpez/PHPBignum) [![codecov](https://codecov.io/gh/hpez/PHPBignum/branch/master/graph/badge.svg)](https://codecov.io/gh/hpez/PHPBignum)
 A bignum library for PHP 7.1.
 
 | Type          | Addition      | Subtraction   | Division      | Multiplication | Square root    | Power          |
