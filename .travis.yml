@@ -4,3 +4,6 @@ php:
 install: composer update
 script:
   - $TRAVIS_BUILD_DIR/vendor/bin/phpunit $TRAVIS_BUILD_DIR/tests/
+  - $TRAVIS_BUILD_DIR/vendor/bin/phpunit --coverage-clover=coverage.xml $TRAVIS_BUILD_DIR/tests/ --whitelist=$TRAVIS_BUILD_DIR/bignum/
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
