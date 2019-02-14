@@ -245,12 +245,12 @@ class BigInt extends BigNum
             $res->multiply($res);
 
             return $res;
-        } else {
-            $res = $this->powRecursive($powNum->div(2));
-            $res2 = $this->powRecursive($powNum->add(1));
-            $res->multiply($res2);
-
-            return $res;
         }
+        
+        $res = $this->powRecursive($powNum->div(2));
+        $res2 = $this->powRecursive($powNum->add(1));
+        $res->multiply($res2);
+
+        return $res;
     }
 }
