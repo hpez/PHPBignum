@@ -4,7 +4,6 @@ When contributing to this repository, please first discuss the change you wish t
 
 ## Pull Request Process
 
-1.  Update the README.md with details of changes to the interface, this includes new environment 
-variables, exposed ports, useful file locations and container parameters.
+1.  Update the README.md with details of changes to the code.
 2.  Create or update the according Unit Tests.
 3.  Create a pull request.
