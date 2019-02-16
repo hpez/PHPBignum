@@ -246,7 +246,7 @@ class BigInt extends BigNum
 
             return $res;
         }
-        
+
         $res = $this->powRecursive($powNum->div(2));
         $res2 = $this->powRecursive($powNum->add(1));
         $res->multiply($res2);

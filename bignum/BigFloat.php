@@ -18,7 +18,7 @@ class BigFloat extends BigNum
      */
     protected function decLength()
     {
-        return $this->length() - $this->intLength();
+        return $this->length() - $this->intLength() - 1;
     }
 
     /**
@@ -99,5 +99,23 @@ class BigFloat extends BigNum
         }
 
         return $this;
+    }
+
+    /**
+     * @param BigFloat|string|double $multiplyNum
+     * @return BigFloat
+     */
+    public function multiply($multiplyNum)
+    {
+        if (gettype($multiplyNum) == 'string' || gettype($multiplyNum) == 'double')
+            $multiplyNum = new BigFloat($multiplyNum);
+
+        $precisionCount = $this->decLength() + $multiplyNum->decLength();
+
+        $firstInt = new BigInt(str_replace('.', '', $this->number));
+        $firstInt->multiply(str_replace('.', '', $multiplyNum->number));
+
+        return new BigFloat(substr($firstInt->number, 0, $firstInt->length() - $precisionCount).'.'
+            .substr($firstInt->number,$firstInt->length() - $precisionCount, $precisionCount));
     }
 }
