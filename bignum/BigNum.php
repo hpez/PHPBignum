@@ -14,7 +14,7 @@ class BigNum
      */
     public function __construct($number)
     {
-        $this->number = strval($number);
+        $this->number = (string)$number;
     }
 
     /**
