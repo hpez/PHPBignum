@@ -11,7 +11,7 @@ A bignum library for PHP 7.1.
 Just clone the project, go to the project directory and run `composer install` and should be good to go! Oh and also for running tests you should do `vendor/phpunit/phpunit/phpunit tests/`.
 
 ## Roadmap
-The goal of this project is making a complete Bignum library for PHP language, so operations other than the ones mentioned in the table should be added too (trigonometric functions, ...). The packagist repo will be added as soon as BigFloat multiplication is done and it will be installable via composer.
+The goal of this project is making a complete Bignum library for PHP language, so operations other than the ones mentioned in the table should be added too (trigonometric functions, ...). The packagist repo will be added as soon as BigFloat division is done and it will be installable via composer.
 
 ## Contribution
-Any contribution in the form of an issue or a pull request is more than welcome!
+Any contribution in the form of an issue or a pull request is more than welcome! Also if you have any questions, feel free to create a new issue or comment on existing ones.
