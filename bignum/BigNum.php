@@ -31,7 +31,7 @@ class BigNum
      */
     public function equals($bigNum)
     {
-        if (gettype($bigNum) == 'string' || gettype($bigNum) == 'integer')
+        if (is_numeric($bigNum) || is_int($bigNum))
             $bigNum = new BigNum($bigNum);
         return $this->number == $bigNum->number;
     }
