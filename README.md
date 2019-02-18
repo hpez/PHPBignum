@@ -7,11 +7,11 @@ A bignum library for PHP 7.1.
 | BigInt        | done          | done          | done          | done           | pending        | done           |
 | BigFloat      | done          | done          | done          | pending        | pending        | pending        |
 
-## Getting started
+## Setting up for developers
 Just clone the project, go to the project directory and run `composer install` and should be good to go! Oh and also for running tests you should do `vendor/phpunit/phpunit/phpunit tests/`.
 
 ## Usage
-The package is installable via `composer require hpez/php-bignum`.
+The package is installable via `composer require hpez/php-bignum` or [packagist repo](https://packagist.org/packages/hpez/php-bignum)
 
 ## Roadmap
 The goal of this project is making a complete Bignum library for PHP language, so operations other than the ones mentioned in the table should be added too (trigonometric functions, ...).
