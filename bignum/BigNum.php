@@ -45,4 +45,30 @@ class BigNum
         $this->number = $bigNum->number;
         return $this;
     }
+
+
+    /**
+     * @param string $digit
+     */
+    protected function rightPush($digit)
+    {
+        $this->number = $this->number.$digit;
+    }
+
+    /**
+     * @param string $digit
+     */
+    protected function leftPush($digit)
+    {
+        $this->number = $digit.$this->number;
+    }
+
+    protected function clearLeadingZeros()
+    {
+        $i = 0;
+        while ($this->number[$i] == '0')
+            $i++;
+        $this->number = substr($this->number, $i, $this->length() - $i);
+        return $this;
+    }
 }

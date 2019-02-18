@@ -118,4 +118,26 @@ class BigFloat extends BigNum
         return new BigFloat(substr($firstInt->number, 0, $firstInt->length() - $precisionCount).'.'
             .substr($firstInt->number,$firstInt->length() - $precisionCount, $precisionCount));
     }
+
+    /**
+     * @param BigFloat|string|double $divNum
+     * @param int $precision
+     * @return BigFloat
+     */
+    public function div($divNum, $precision = 6)
+    {
+        if (gettype($divNum) == 'string' || gettype($divNum) == 'double')
+            $divNum = new BigFloat($divNum);
+
+        $precisionCount = $this->decLength() - $divNum->decLength();
+
+        for ($i = 0; $i < $precision - $precisionCount; $i++)
+            $this->rightPush('0');
+
+        $firstInt = new BigInt(str_replace('.', '', $this->number));
+        $firstInt->div(str_replace('.', '', $divNum->number));
+
+        return new BigFloat(substr($firstInt->number, 0, $firstInt->length() - $precision).'.'
+            .substr($firstInt->number,$firstInt->length() - $precision, $precision));
+    }
 }

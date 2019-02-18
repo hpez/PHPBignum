@@ -29,4 +29,11 @@ class BigFloatTest extends TestCase
         $bigFloat2 = new BigFloat('654321.22');
         $this->assertEquals($bigFloat1->multiply($bigFloat2), new BigFloat('80779953165.97542'));
     }
+
+    public function testDivWorks(): void
+    {
+        $bigFloat1 = new BigFloat('123456.111');
+        $bigFloat2 = new BigFloat('654321.22');
+        $this->assertEquals($bigFloat1->div($bigFloat2), new BigFloat('0.188678'));
+    }
 }

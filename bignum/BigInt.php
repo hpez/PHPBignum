@@ -51,22 +51,6 @@ class BigInt extends BigNum
     }
 
     /**
-     * @param string $digit
-     */
-    protected function rightPush($digit)
-    {
-        $this->number = $this->number.$digit;
-    }
-
-    /**
-     * @param string $digit
-     */
-    protected function leftPush($digit)
-    {
-        $this->number = $digit.$this->number;
-    }
-
-    /**
      * @param BigInt|string|integer $addNum
      * @return BigInt
      */
@@ -147,10 +131,11 @@ class BigInt extends BigNum
                 $count++;
             }
             $quotient->rightPush(strval($count));
-            if ($next < $divNum->length())
+            if ($next < $this->length())
                 $now->rightPush($this->number[$next]);
             $next++;
-        } while($next < $divNum->length());
+            $now->clearLeadingZeros();
+        } while($next <= $this->length());
 
         $this->number = $quotient->number;
 
