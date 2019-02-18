@@ -66,7 +66,7 @@ class BigNum
     protected function clearLeadingZeros()
     {
         $i = 0;
-        while ($this->number[$i] == '0')
+        while ($i < $this->length() && $this->number[$i] == '0')
             $i++;
         $this->number = substr($this->number, $i, $this->length() - $i);
         return $this;
