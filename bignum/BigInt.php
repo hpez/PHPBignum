@@ -177,7 +177,7 @@ class BigInt extends BigNum
                 $now->sub($modNum);
                 $count++;
             }
-            $quotient->rightPush(strval($count));
+            $quotient->rightPush((string)($count));
             if ($next < $modNum->length())
                 $now->rightPush($this->number[$next]);
             $next++;
