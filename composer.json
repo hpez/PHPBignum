@@ -1,16 +1,22 @@
 {
     "name": "hpez/php-bignum",
     "type": "library",
+    "description": "A bignum library for PHP 7.2",
     "require-dev": {
         "phpunit/phpunit": "^8.1@dev"
     },
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "A bignum library for PHPHassan Pezeshk",
+            "name": "Hassan Pezeshk",
             "email": "hpez58@gmail.com"
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "classmap": [
+          "bignum/"
+        ]
+    }
 }
