@@ -72,7 +72,7 @@ class BigInt extends BigNum
      */
     public function add($addNum)
     {
-        if (gettype($addNum) == 'string' || gettype($addNum) == 'integer')
+        if (is_numeric($addNum) || is_int($addNum))
             $addNum = new BigInt($addNum);
         $addNumString = $addNum->number;
         $diff = $this->length() - strlen($addNumString);
