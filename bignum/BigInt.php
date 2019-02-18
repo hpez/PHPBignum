@@ -204,7 +204,7 @@ class BigInt extends BigNum
                 $digitRes->rightPush('0');
             for ($j = $multiplyNum->length()-1; $j >= 0; $j--) {
                 $value = ((int)($this->number[$i]) * (int)($multiplyNum->number[$j]) + $carry) % 10;
-                $carry = floor((intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) / 10);
+                $carry = floor(((int)($this->number[$i]) * (int)($multiplyNum->number[$j]) + $carry) / 10);
                 $digitRes->leftPush($value);
             }
             if ($carry != 0)
