@@ -203,7 +203,7 @@ class BigInt extends BigNum
             for ($j = $this->length()-1; $j > $i; $j--)
                 $digitRes->rightPush('0');
             for ($j = $multiplyNum->length()-1; $j >= 0; $j--) {
-                $value = (intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) % 10;
+                $value = ((int)($this->number[$i]) * (int)($multiplyNum->number[$j]) + $carry) % 10;
                 $carry = floor((intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) / 10);
                 $digitRes->leftPush($value);
             }
