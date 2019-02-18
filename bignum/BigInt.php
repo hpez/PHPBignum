@@ -34,7 +34,7 @@ class BigInt extends BigNum
      */
     public function isBiggerThan($cmpNum)
     {
-        if (gettype($cmpNum) == 'string' || gettype($cmpNum) == 'integer')
+        if (is_numeric($cmpNum) || is_int($cmpNum))
             $cmpNum = new BigInt($cmpNum);
         if ($this->length() > $cmpNum->length())
             return true;
