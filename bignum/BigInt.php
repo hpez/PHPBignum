@@ -34,7 +34,7 @@ class BigInt extends BigNum
      */
     public function isBiggerThan($cmpNum)
     {
-        if (gettype($cmpNum) == 'string' || gettype($cmpNum) == 'integer')
+        if (is_numeric($cmpNum) || is_int($cmpNum))
             $cmpNum = new BigInt($cmpNum);
         if ($this->length() > $cmpNum->length())
             return true;
@@ -56,7 +56,7 @@ class BigInt extends BigNum
      */
     public function add($addNum)
     {
-        if (gettype($addNum) == 'string' || gettype($addNum) == 'integer')
+        if (is_numeric($addNum) || is_int($addNum))
             $addNum = new BigInt($addNum);
         $addNumString = $addNum->number;
         $diff = $this->length() - strlen($addNumString);
@@ -69,8 +69,8 @@ class BigInt extends BigNum
 
         $carry = 0;
         for ($i = strlen($addNumString)-1; $i >= 0; $i--) {
-            $value = (intval($this->number[$i]) + intval($addNumString[$i] + $carry)) % 10;
-            $carry = floor((intval($this->number[$i]) + intval($addNumString[$i] + $carry)) / 10);
+            $value = ((int)($this->number[$i]) + (int)($addNumString[$i] + $carry)) % 10;
+            $carry = floor(((int)($this->number[$i]) + (int)($addNumString[$i] + $carry)) / 10);
             $this->number[$i] = $value;
         }
         if ($carry != 0)
@@ -96,7 +96,7 @@ class BigInt extends BigNum
 
         $carry = 0;
         for ($i = strlen($subNumString)-1; $i >= 0; $i--) {
-            $value = (intval($this->number[$i]) - intval($subNumString[$i] + $carry));
+            $value = ((int)($this->number[$i]) - (int)($subNumString[$i] + $carry));
             if ($value < 0) {
                 $carry = 1;
                 $value += 10;
@@ -162,7 +162,7 @@ class BigInt extends BigNum
                 $now->sub($modNum);
                 $count++;
             }
-            $quotient->rightPush(strval($count));
+            $quotient->rightPush((string)($count));
             if ($next < $modNum->length())
                 $now->rightPush($this->number[$next]);
             $next++;
@@ -188,8 +188,8 @@ class BigInt extends BigNum
             for ($j = $this->length()-1; $j > $i; $j--)
                 $digitRes->rightPush('0');
             for ($j = $multiplyNum->length()-1; $j >= 0; $j--) {
-                $value = (intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) % 10;
-                $carry = floor((intval($this->number[$i]) * intval($multiplyNum->number[$j]) + $carry) / 10);
+                $value = ((int)($this->number[$i]) * (int)($multiplyNum->number[$j]) + $carry) % 10;
+                $carry = floor(((int)($this->number[$i]) * (int)($multiplyNum->number[$j]) + $carry) / 10);
                 $digitRes->leftPush($value);
             }
             if ($carry != 0)
