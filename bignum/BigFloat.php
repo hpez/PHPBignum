@@ -27,7 +27,7 @@ class BigFloat extends BigNum
      */
     public function add($addNum)
     {
-        if (gettype($addNum) == 'string' || gettype($addNum) == 'double')
+        if (is_numeric($addNum) || is_double($addNum))
             $addNum = new BigFloat($addNum);
         $addNumString = $addNum->number;
         $diff = $this->decLength() - $addNum->decLength();
@@ -66,7 +66,7 @@ class BigFloat extends BigNum
      */
     public function sub($subNum)
     {
-        if (gettype($subNum) == 'string' || gettype($subNum) == 'double')
+        if (is_numeric($subNum) || is_double($subNum))
             $subNum = new BigFloat($subNum);
         $subNumString = $subNum->number;
         $diff = $this->decLength() - $subNum->decLength();
@@ -107,7 +107,7 @@ class BigFloat extends BigNum
      */
     public function multiply($multiplyNum)
     {
-        if (gettype($multiplyNum) == 'string' || gettype($multiplyNum) == 'double')
+        if (is_numeric($multiplyNum) || is_double($multiplyNum))
             $multiplyNum = new BigFloat($multiplyNum);
 
         $precisionCount = $this->decLength() + $multiplyNum->decLength();
@@ -126,7 +126,7 @@ class BigFloat extends BigNum
      */
     public function div($divNum, $precision = 6)
     {
-        if (gettype($divNum) == 'string' || gettype($divNum) == 'double')
+        if (is_numeric($divNum) || is_double($divNum))
             $divNum = new BigFloat($divNum);
 
         $precisionCount = $this->decLength() - $divNum->decLength();
