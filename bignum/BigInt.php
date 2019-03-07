@@ -12,7 +12,7 @@ class BigInt extends BigNum
      */
     public function isLesserThan($cmpNum)
     {
-        if (gettype($cmpNum) == 'string' || gettype($cmpNum) == 'integer')
+        if (is_numeric($cmpNum) || is_int($cmpNum))
             $cmpNum = new BigInt($cmpNum);
         if ($this->length() < $cmpNum->length())
             return true;
@@ -85,7 +85,7 @@ class BigInt extends BigNum
      */
     public function sub($subNum)
     {
-        if (gettype($subNum) == 'string' || gettype($subNum) == 'integer')
+        if (is_numeric($subNum) || is_int($subNum))
             $subNum = new BigInt($subNum);
         $subNumString = $subNum->number;
         for ($i = 0; $i < $this->length() - strlen($subNumString); $i++)
@@ -114,7 +114,7 @@ class BigInt extends BigNum
      */
     public function div($divNum)
     {
-        if (gettype($divNum) == 'string' || gettype($divNum) == 'integer')
+        if (is_numeric($divNum) || is_int($divNum))
             $divNum = new BigInt($divNum);
         if ($divNum->isBiggerThan($this)) {
             $this->number = '0';
@@ -148,7 +148,7 @@ class BigInt extends BigNum
      */
     public function mod($modNum)
     {
-        if (gettype($modNum) == 'string' || gettype($modNum) == 'integer')
+        if (is_numeric($modNum) || is_int($modNum))
             $modNum = new BigInt($modNum);
         if ($modNum->isBiggerThan($this))
             return $this;
@@ -179,7 +179,7 @@ class BigInt extends BigNum
      */
     public function multiply($multiplyNum)
     {
-        if (gettype($multiplyNum) == 'string' || gettype($multiplyNum) == 'integer')
+        if (is_numeric($multiplyNum) || is_int($multiplyNum))
             $multiplyNum = new BigInt($multiplyNum);
         $result = new BigInt('0');
         for ($i = $this->length()-1; $i >= 0; $i--) {
@@ -207,7 +207,7 @@ class BigInt extends BigNum
      */
     public function pow($powNum)
     {
-        if (gettype($powNum) == 'string' || gettype($powNum) == 'integer')
+        if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
         $this->number = $this->powRecursive($powNum)->number;
         return $this;

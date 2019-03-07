@@ -65,10 +65,10 @@ class BigNum
 
     protected function clearLeadingZeros()
     {
-        $i = 0;
-        while ($i < $this->length() && $this->number[$i] == '0')
-            $i++;
-        $this->number = substr($this->number, $i, $this->length() - $i);
+        $iterator = 0;
+        while ($iterator < $this->length() && $this->number[$iterator] == '0')
+            $iterator++;
+        $this->number = substr($this->number, $iterator, $this->length() - $iterator);
         return $this;
     }
 }
