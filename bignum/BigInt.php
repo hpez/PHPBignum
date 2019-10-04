@@ -108,6 +108,7 @@ class BigInt extends BigNum
             $this->number[$i] = $value;
         }
 
+        $this->clearLeadingZeros();
         return $this;
     }
 
@@ -155,23 +156,13 @@ class BigInt extends BigNum
             $modNum = new BigInt($modNum);
         if ($modNum->isBiggerThan($this))
             return $this;
-
-        $quotient = new BigInt('');
-        $now = new BigInt(substr($this->number, 0, $modNum->length()));
-        $next = $modNum->length();
-        do {
-            $count = 0;
-            while ($modNum <= $now) {
-                $now->sub($modNum);
-                $count++;
-            }
-            $quotient->rightPush((string)($count));
-            if ($next < $modNum->length())
-                $now->rightPush($this->number[$next]);
-            $next++;
-        } while($next < $modNum->length());
-
-        $this->number = $now->number;
+        
+        $now = new BigInt($this->number);
+        $now->div($modNum);
+        $now->clearLeadingZeros();
+        $now->multiply($modNum);
+        $this->sub($now);
+        $this->clearLeadingZeros();
 
         return $this;
     }
