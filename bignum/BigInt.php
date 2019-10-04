@@ -203,7 +203,7 @@ class BigInt extends BigNum
     {
         if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
-        $this->number = $this->powRecursive($powNum)->number;
+        $this->powRecursive($powNum)->number;
         return $this;
     }
 
@@ -213,23 +213,20 @@ class BigInt extends BigNum
      */
     private function powRecursive($powNum)
     {
-        if ($powNum->equals(0))
-            return new BigInt(1);
+        if ($powNum->equals(0)) {
+            $this->number = "1";
+            return $this;
+        }
         if ($powNum->equals(1))
-            return (new BigInt(''))->copy($this);
+            return $this;
 
         $powNumC = (new BigInt(''))->copy($powNum);
-        if ($powNumC->mod(2)->equals(0)) {
-            $res = $this->powRecursive($powNum->div(2));
-            $res->multiply($res);
-
-            return $res;
-        }
-
-        $res = $this->powRecursive($powNum->div(2));
-        $res2 = $this->powRecursive($powNum->add(1));
-        $res->multiply($res2);
-
-        return $res;
+        $current = (new BigInt(''))->copy($this);
+        $this->powRecursive($powNum->div(2));
+        $this->multiply($this);
+        if ($powNumC->mod(2)->equals(1))
+            $this->multiply($current);
+        
+        return $this;
     }
 }
