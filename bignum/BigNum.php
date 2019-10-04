@@ -65,6 +65,7 @@ class BigNum
 
     protected function clearLeadingZeros()
     {
+        if ($this->number == "0") return $this;
         $iterator = 0;
         while ($iterator < $this->length() && $this->number[$iterator] == '0')
             $iterator++;

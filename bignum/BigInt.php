@@ -88,10 +88,13 @@ class BigInt extends BigNum
         if (is_numeric($subNum) || is_int($subNum))
             $subNum = new BigInt($subNum);
         $subNumString = $subNum->number;
-        for ($i = 0; $i < $this->length() - strlen($subNumString); $i++)
+        
+        $digitDifference = $this->length() - strlen($subNumString);
+        for ($i = 0; $i < $digitDifference; $i++)
             $subNumString = '0'.$subNumString;
 
-        for ($i = 0; $i < strlen($subNumString) - strlen($this->number); $i++)
+        $digitDifference = strlen($subNumString) - strlen($this->number);
+        for ($i = 0; $i < $digitDifference; $i++)
             $this->number = '0'.$this->number;
 
         $carry = 0;
@@ -105,6 +108,7 @@ class BigInt extends BigNum
             $this->number[$i] = $value;
         }
 
+        $this->clearLeadingZeros();
         return $this;
     }
 
@@ -152,23 +156,13 @@ class BigInt extends BigNum
             $modNum = new BigInt($modNum);
         if ($modNum->isBiggerThan($this))
             return $this;
-
-        $quotient = new BigInt('');
-        $now = new BigInt(substr($this->number, 0, $modNum->length()));
-        $next = $modNum->length();
-        do {
-            $count = 0;
-            while ($modNum <= $now) {
-                $now->sub($modNum);
-                $count++;
-            }
-            $quotient->rightPush((string)($count));
-            if ($next < $modNum->length())
-                $now->rightPush($this->number[$next]);
-            $next++;
-        } while($next < $modNum->length());
-
-        $this->number = $now->number;
+        
+        $now = new BigInt($this->number);
+        $now->div($modNum);
+        $now->clearLeadingZeros();
+        $now->multiply($modNum);
+        $this->sub($now);
+        $this->clearLeadingZeros();
 
         return $this;
     }
@@ -209,7 +203,7 @@ class BigInt extends BigNum
     {
         if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
-        $this->number = $this->powRecursive($powNum)->number;
+        $this->powRecursive($powNum)->number;
         return $this;
     }
 
@@ -219,23 +213,20 @@ class BigInt extends BigNum
      */
     private function powRecursive($powNum)
     {
-        if ($powNum->equals(0))
-            return new BigInt(1);
+        if ($powNum->equals(0)) {
+            $this->number = "1";
+            return $this;
+        }
         if ($powNum->equals(1))
-            return (new BigInt(''))->copy($this);
+            return $this;
 
         $powNumC = (new BigInt(''))->copy($powNum);
-        if ($powNumC->mod(2)->equals(0)) {
-            $res = $this->powRecursive($powNum->div(2));
-            $res->multiply($res);
-
-            return $res;
-        }
-
-        $res = $this->powRecursive($powNum->div(2));
-        $res2 = $this->powRecursive($powNum->add(1));
-        $res->multiply($res2);
-
-        return $res;
+        $current = (new BigInt(''))->copy($this);
+        $this->powRecursive($powNum->div(2));
+        $this->multiply($this);
+        if ($powNumC->mod(2)->equals(1))
+            $this->multiply($current);
+        
+        return $this;
     }
 }
