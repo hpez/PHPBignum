@@ -35,6 +35,10 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('123456');
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->add($bigInt2), new BigInt('777777'));
+        
+        $bigInt1 = new BigInt('2183912839129019129031231104291489123');
+        $bigInt2 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $this->assertEquals($bigInt1->add($bigInt2), new BigInt('291898938518278437286556787110912808551464070356229987246'));
     }
 
     public function testSubWorks(): void
@@ -42,6 +46,10 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->sub($bigInt2), new BigInt('123456'));
+        
+        $bigInt1 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $bigInt2 = new BigInt('2183912839129019129031231104291489123');
+        $this->assertEquals($bigInt1->sub($bigInt2), new BigInt('291898938518278437282188961432654770293401608147647009000'));
     }
 
     public function testDivWorks(): void
@@ -49,6 +57,14 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->div($bigInt2), new BigInt('1'));
+        
+        $bigInt1 = new BigInt('123');
+        $bigInt2 = new BigInt('654321');
+        $this->assertEquals($bigInt1->div($bigInt2), new BigInt('0'));
+        
+        $bigInt1 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $bigInt2 = new BigInt('2183912839129019129031231104291489123');
+        $this->assertEquals($bigInt1->div($bigInt2), new BigInt('133658694288684434516'));
     }
 
     public function testModWorks(): void
@@ -56,6 +72,10 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('123456'));
+
+        $bigInt1 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $bigInt2 = new BigInt('2183912839129019129031231104291489123');
+        $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('848074429877767681348718947118728655'));
     }
 
     public function testMultiplyWorks(): void
@@ -63,6 +83,10 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('508915824417'));
+        
+        $bigInt1 = new BigInt('848074429877767681348718947118728655');
+        $bigInt2 = new BigInt('2183912839129019129031231104291489123');
+        $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('1852120635947079864253215608493572572382593175993758553041206712520919565'));
     }
 
     public function testPowWorks(): void
@@ -70,11 +94,21 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('1');
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('777777'));
+        
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('2');
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('604937061729'));
+
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt(3);
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('470506133060396433'));
+
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt(4);
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('365948848653315956469441'));
+        
+        $bigInt1 = new BigInt(17);
+        $bigInt2 = new BigInt('25');
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('5770627412348402378939569991057'));
     }
 }
