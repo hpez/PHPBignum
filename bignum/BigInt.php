@@ -88,10 +88,13 @@ class BigInt extends BigNum
         if (is_numeric($subNum) || is_int($subNum))
             $subNum = new BigInt($subNum);
         $subNumString = $subNum->number;
-        for ($i = 0; $i < $this->length() - strlen($subNumString); $i++)
+        
+        $digitDifference = $this->length() - strlen($subNumString);
+        for ($i = 0; $i < $digitDifference; $i++)
             $subNumString = '0'.$subNumString;
 
-        for ($i = 0; $i < strlen($subNumString) - strlen($this->number); $i++)
+        $digitDifference = strlen($subNumString) - strlen($this->number);
+        for ($i = 0; $i < $digitDifference; $i++)
             $this->number = '0'.$this->number;
 
         $carry = 0;
