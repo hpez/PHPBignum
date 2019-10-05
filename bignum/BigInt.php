@@ -108,7 +108,6 @@ class BigInt extends BigNum
             $this->number[$i] = $value;
         }
 
-        $this->clearLeadingZeros();
         return $this;
     }
 
@@ -227,6 +226,38 @@ class BigInt extends BigNum
         if ($powNumC->mod(2)->equals(1))
             $this->multiply($current);
         
+        return $this;
+    }
+
+    public function sqrt()
+    {
+        if ($this->number == '0')
+            return $this;
+        $result = '1';
+        $left = new BigInt('0');
+        $right = new BigInt($this->number);
+
+        while ($left->equals($right) || $left->isLesserThan($right)) {
+            $middle = new BigInt($left->number);
+            $middle->add($right->number);
+            $middle->div(2);
+            $middle->clearLeadingZeros();
+            $midSquared = new BigInt($middle->number);
+            $midSquared->multiply($midSquared);
+            if ($midSquared->equals($this)) {
+                $result = $middle->number;
+                break;
+            } elseif ($midSquared->isLesserThan($this)) {
+                $result = $middle->number;
+                $left = new BigInt($middle->number);
+                $left->add(1);
+            } else {
+                $right = new BigInt($middle->number);
+                $right->sub(1);
+            }
+        }
+
+        $this->number = $result;
         return $this;
     }
 }
