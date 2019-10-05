@@ -203,7 +203,7 @@ class BigInt extends BigNum
     {
         if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
-        $this->powRecursive($powNum)->number;
+        $this->powRecursive($powNum);
         return $this;
     }
 
