@@ -108,6 +108,7 @@ class BigInt extends BigNum
             $this->number[$i] = $value;
         }
 
+        $this->clearLeadingZeros();
         return $this;
     }
 
