@@ -4,7 +4,7 @@ A bignum library for PHP.
 
 | Type          | Addition      | Subtraction   | Division      | Multiplication | Square root    | Power          |
 | ------------- |---------------|---------------|---------------|----------------|----------------|----------------|
-| BigInt        | done          | done          | done          | done           | pending        | done           |
+| BigInt        | done          | done          | done          | done           | done           | done           |
 | BigFloat      | done          | done          | done          | pending        | pending        | pending        |
 
 ## Setting up for developers

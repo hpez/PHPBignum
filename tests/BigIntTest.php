@@ -20,6 +20,7 @@ class BigIntTest extends TestCase
         $this->assertTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('12345678900')));
         $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567891')));
         $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567890')));
+        $this->assertNotTrue((new BigInt('1234567891123131'))->isLesserThan(new BigInt('1234567890122')));
     }
 
     public function testIsBiggerThanWorks(): void
@@ -38,6 +39,10 @@ class BigIntTest extends TestCase
         
         $bigInt1 = new BigInt('2183912839129019129031231104291489123');
         $bigInt2 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $this->assertEquals($bigInt1->add($bigInt2), new BigInt('291898938518278437286556787110912808551464070356229987246'));
+
+        $bigInt1 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $bigInt2 = new BigInt('2183912839129019129031231104291489123');
         $this->assertEquals($bigInt1->add($bigInt2), new BigInt('291898938518278437286556787110912808551464070356229987246'));
     }
 
@@ -76,6 +81,10 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('291898938518278437284372874271783789422432839251938498123');
         $bigInt2 = new BigInt('2183912839129019129031231104291489123');
         $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('848074429877767681348718947118728655'));
+
+        $bigInt1 = new BigInt('2183912839129019129031231104291489123');
+        $bigInt2 = new BigInt('291898938518278437284372874271783789422432839251938498123');
+        $this->assertEquals($bigInt1->mod($bigInt2), new BigInt('2183912839129019129031231104291489123'));
     }
 
     public function testMultiplyWorks(): void
@@ -84,6 +93,10 @@ class BigIntTest extends TestCase
         $bigInt2 = new BigInt('654321');
         $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('508915824417'));
         
+        $bigInt1 = new BigInt('1293489314951253929432143');
+        $bigInt2 = new BigInt('1293489314951253929432143');
+        $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('1673114607893064182146858155499896494466441572449'));
+        
         $bigInt1 = new BigInt('848074429877767681348718947118728655');
         $bigInt2 = new BigInt('2183912839129019129031231104291489123');
         $this->assertEquals($bigInt1->multiply($bigInt2), new BigInt('1852120635947079864253215608493572572382593175993758553041206712520919565'));
@@ -91,6 +104,10 @@ class BigIntTest extends TestCase
 
     public function testPowWorks(): void
     {
+        $bigInt1 = new BigInt('777777');
+        $bigInt2 = new BigInt('0');
+        $this->assertEquals($bigInt1->pow($bigInt2), new BigInt(1));
+
         $bigInt1 = new BigInt('777777');
         $bigInt2 = new BigInt('1');
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('777777'));
@@ -110,5 +127,36 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt(17);
         $bigInt2 = new BigInt('25');
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('5770627412348402378939569991057'));
+    }
+    
+
+    public function testSqrtWorks(): void
+    {
+        $bigInt1 = new BigInt(0);
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('0'));
+        
+        $bigInt1 = new BigInt('1');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt(1));
+
+        $bigInt1 = new BigInt('64');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('8'));
+        
+        $bigInt1 = new BigInt('10000');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('100'));
+        
+        $bigInt1 = new BigInt('45436982671906576');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('213159524'));
+        
+        $bigInt1 = new BigInt('45436982671909999');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('213159524'));
+        
+        $bigInt1 = new BigInt('1673114607893064182146858155499896494466441572449');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('1293489314951253929432143'));
+        
+        $bigInt1 = new BigInt('1673114607893064182146858155499896494999999999999');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('1293489314951253929432143'));
+        
+        $bigInt1 = new BigInt('125565743411314940280117058839559235348721155386037390522297885292681173306025');
+        $this->assertEquals($bigInt1->sqrt(), new BigInt('354352569358985938593895384925823985395'));
     }
 }
