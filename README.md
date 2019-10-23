@@ -5,7 +5,7 @@ A bignum library for PHP.
 | Type          | Addition      | Subtraction   | Division      | Multiplication | Square root    | Power          |
 | ------------- |---------------|---------------|---------------|----------------|----------------|----------------|
 | BigInt        | done          | done          | done          | done           | done           | done           |
-| BigFloat      | done          | done          | done          | pending        | pending        | pending        |
+| BigFloat      | done          | done          | done          | done           | done           | pending        |
 
 ## Setting up for developers
 Just clone the project, go to the project directory and run `composer install` and should be good to go! Oh and also for running tests you should do `vendor/phpunit/phpunit/phpunit tests/`.
