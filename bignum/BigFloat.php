@@ -2,9 +2,20 @@
 
 namespace hpez\bignum;
 
-
 class BigFloat extends BigNum
 {
+    public function __construct(
+        $number
+    ) {
+        $this->number = (string)$number;
+
+        if (strpos($this->number, '.') === false) {
+            $this->number = $this->number . '.0';
+        }
+
+        parent::__construct($this->number);
+    }
+
     /**
      * @return bool|int
      */
@@ -129,6 +140,8 @@ class BigFloat extends BigNum
         if (is_numeric($divNum) || is_double($divNum))
             $divNum = new BigFloat($divNum);
 
+        ++$precision;
+
         $precisionCount = $this->decLength() - $divNum->decLength();
 
         for ($i = 0; $i < $precision - $precisionCount; $i++)
@@ -137,7 +150,45 @@ class BigFloat extends BigNum
         $firstInt = new BigInt(str_replace('.', '', $this->number));
         $firstInt->div(str_replace('.', '', $divNum->number));
 
+        $lastIndex = strlen($firstInt->number) - 1;
+        $last = (int) $firstInt->number[
+            $lastIndex
+        ];
+        if ($last >= 5) {
+            $number = (int) $firstInt->number[$lastIndex-1];
+            ++$number;
+            $firstInt->number[$lastIndex-1] = $number;
+        }
+
         return new BigFloat(substr($firstInt->number, 0, $firstInt->length() - $precision).'.'
-            .substr($firstInt->number,$firstInt->length() - $precision, $precision));
+            .substr($firstInt->number,$firstInt->length() - $precision, $precision - 1));
+    }
+
+    /**
+     * @param int $precision = 6
+     * @return BigFloat
+     */
+    public function sqrt(int $precision = 6): BigFloat
+    {
+        $nextAttempt = clone $this;
+
+        do
+        {
+            $previousAttempt = $nextAttempt;
+            $testable = clone $previousAttempt;
+
+            $nextAttempt = $previousAttempt->sub(
+                $previousAttempt
+                ->multiply(clone $previousAttempt)
+                ->sub($this)
+                ->div(
+                    ($previousAttempt)->multiply(2),
+                    $precision
+                )
+            );
+            $nextAttempt->clearLeadingZeros();
+        } while (!$nextAttempt->equals($testable));
+
+        return $nextAttempt;
     }
 }
