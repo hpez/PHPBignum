@@ -2,6 +2,7 @@ language: php
 php: 
   - '7.2'
   - '7.3'
+  - '7.4snapshot'
 install: composer update
 script:
   - $TRAVIS_BUILD_DIR/vendor/bin/phpunit $TRAVIS_BUILD_DIR/tests/
