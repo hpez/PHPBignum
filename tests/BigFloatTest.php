@@ -33,6 +33,12 @@ class BigFloatTest extends TestCase
         );
     }
 
+    public function testAddDouble(): void
+    {
+        $bigFloat = new BigFloat('1.1');
+        $this->assertEquals(new BigFloat('1.2'), $bigFloat->add(0.1));
+    }
+
     public function testSubWorks(): void
     {
         $bigFloat1 = new BigFloat('123456.111');
@@ -41,6 +47,12 @@ class BigFloatTest extends TestCase
             new BigFloat('530865.109'),
             $bigFloat2->sub($bigFloat1)
         );
+    }
+
+    public function testSubDouble(): void
+    {
+        $bigFloat = new BigFloat('1.2');
+        $this->assertEquals(new BigFloat('1.1'), $bigFloat->sub(0.1));
     }
 
     public function testSubWorks2(): void
@@ -71,6 +83,12 @@ class BigFloatTest extends TestCase
             new BigFloat('0.188678'),
             $bigFloat1->div($bigFloat2)
         );
+    }
+
+    public function testDivDouble(): void
+    {
+        $bigFloat = new BigFloat('10');
+        $this->assertEquals(new BigFloat('100.000000'), $bigFloat->div(0.1));
     }
 
     public function testDivWorks2(): void
