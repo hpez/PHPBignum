@@ -138,6 +138,11 @@ class BigIntTest extends TestCase
         $this->assertEquals($bigInt1->pow($bigInt2), new BigInt('5770627412348402378939569991057'));
     }
 
+    public function testPowToInteger() : void
+    {
+        $bigInt1 = new BigInt(2);
+        $this->assertEquals($bigInt1->pow(2), new BigInt(4));
+    }
 
     public function testSqrtWorks(): void
     {
