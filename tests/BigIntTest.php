@@ -20,11 +20,11 @@ class BigIntTest extends TestCase
         $this->assertTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('12345678900')));
         $this->assertTrue((new BigInt('1234567892'))->isLesserThan(1234567893));
         $this->assertTrue((new BigInt('1234567893'))->isLesserThan('1234567894'));
-        $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567891')));
-        $this->assertNotTrue((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567890')));
-        $this->assertNotTrue((new BigInt('1234567892'))->isLesserThan(1234567891));
-        $this->assertNotTrue((new BigInt('1234567893'))->isLesserThan('1234567892'));
-        $this->assertNotTrue((new BigInt('1234567891123131'))->isLesserThan(new BigInt('1234567890122')));
+        $this->assertFalse((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567891')));
+        $this->assertFalse((new BigInt('1234567891'))->isLesserThan(new BigInt('1234567890')));
+        $this->assertFalse((new BigInt('1234567892'))->isLesserThan(1234567891));
+        $this->assertFalse((new BigInt('1234567893'))->isLesserThan('1234567892'));
+        $this->assertFalse((new BigInt('1234567891123131'))->isLesserThan(new BigInt('1234567890122')));
     }
 
     public function testIsBiggerThanWorks(): void
@@ -34,10 +34,10 @@ class BigIntTest extends TestCase
         $this->assertTrue((new BigInt('12345678901'))->isBiggerThan(1234567890));
         $this->assertTrue((new BigInt('12345678902'))->isBiggerThan('12345678901'));
 
-        $this->assertNotTrue((new BigInt('1234567891'))->isBiggerThan(new BigInt('1234567891')));
-        $this->assertNotTrue((new BigInt('1234567890'))->isBiggerThan(new BigInt('1234567891')));
-        $this->assertNotTrue((new BigInt('12345678901'))->isBiggerThan(12345678902));
-        $this->assertNotTrue((new BigInt('12345678902'))->isBiggerThan('12345678903'));
+        $this->assertFalse((new BigInt('1234567891'))->isBiggerThan(new BigInt('1234567891')));
+        $this->assertFalse((new BigInt('1234567890'))->isBiggerThan(new BigInt('1234567891')));
+        $this->assertFalse((new BigInt('12345678901'))->isBiggerThan(12345678902));
+        $this->assertFalse((new BigInt('12345678902'))->isBiggerThan('12345678903'));
     }
 
     public function testAddWorks(): void
