@@ -91,6 +91,12 @@ class BigFloatTest extends TestCase
         $this->assertEquals(new BigFloat('100.000000'), $bigFloat->div(0.1));
     }
 
+    public function testAddWithLongerLengthResult(): void
+    {
+        $bigFloat = new BigFloat('9.0');
+        $this->assertEquals(new BigFloat('18.0'), $bigFloat->add(9));
+    }
+
     public function testDivWorks2(): void
     {
         $bigFloat1 = new BigFloat('9');
