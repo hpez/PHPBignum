@@ -2,6 +2,11 @@
     "name": "hpez/php-bignum",
     "type": "library",
     "description": "A bignum library for PHP 7.2",
+    "keywords": [
+        "php",
+        "bignum",
+        "package"
+    ],
     "require-dev": {
         "phpunit/phpunit": "^8"
     },
