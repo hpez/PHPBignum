@@ -45,7 +45,14 @@ class BigNum
         $this->number = $bigNum->number;
         return $this;
     }
-
+    
+    /**
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 
     /**
      * @param string $digit
