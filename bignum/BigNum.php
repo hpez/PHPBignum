@@ -46,6 +46,13 @@ class BigNum
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->number;
+    }
 
     /**
      * @param string $digit
