@@ -17,15 +17,6 @@ The package is installable via `composer require hpez/php-bignum` or [packagist 
 ```php
 <?php
 
-// Load Composer's autoloader
-require 'vendor/autoload.php';
-
- // Load for BigInteger Computation
-use hpez\bignum\BigInt;
-
-// Load for BigFloat Computation
-use hpez\bignum\BigFloat;
-
 // BigInteger Addition
 $bigInt1 = new BigInt('123456')
 $bigInt2 = new BigInt('654321');
