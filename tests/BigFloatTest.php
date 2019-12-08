@@ -158,5 +158,8 @@ class BigFloatTest extends TestCase
         $bigFloat5 = new BigFloat('123456789.123456789');
         $bigInt5 = new BigInt('3');
         $this->assertEquals(new BigFloat('1881676377434183981909562.699940347954480361860897069'), $bigFloat5->pow($bigInt5));
+
+        $bigFloat6 = new BigFloat('1.23');
+        $this->assertEquals(new BigFloat('1.860867'), $bigFloat6->pow(3));        
     }
 }
