@@ -3,6 +3,7 @@
 namespace hpez\tests;
 
 use hpez\bignum\BigFloat;
+use hpez\bignum\BigInt;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -134,5 +135,28 @@ class BigFloatTest extends TestCase
             new BigFloat('1.4142136'),
             $bigFloat->sqrt(7)
         );
+    }
+
+    public function testPowWorks() : void
+    {
+        $bigFloat1 = new BigFloat('1.2');
+        $bigInt1 = new BigInt('3');
+        $this->assertEquals(new BigFloat('1.728'), $bigFloat1->pow($bigInt1));
+
+        $bigFloat2 = new BigFloat('.2');
+        $bigInt2 = new BigInt('3');
+        $this->assertEquals(new BigFloat('0.008'), $bigFloat2->pow($bigInt2));
+
+        $bigFloat3 = new BigFloat('.002');
+        $bigInt3 = new BigInt('3');
+        $this->assertEquals(new BigFloat('0.000000008'), $bigFloat3->pow($bigInt3));
+
+        $bigFloat4 = new BigFloat('12345.12345');
+        $bigInt4 = new BigInt('3');
+        $this->assertEquals(new BigFloat('1881422405168.320420453463625'), $bigFloat4->pow($bigInt4));
+
+        $bigFloat5 = new BigFloat('123456789.123456789');
+        $bigInt5 = new BigInt('3');
+        $this->assertEquals(new BigFloat('1881676377434183981909562.699940347954480361860897069'), $bigFloat5->pow($bigInt5));
     }
 }

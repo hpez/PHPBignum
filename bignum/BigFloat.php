@@ -191,4 +191,66 @@ class BigFloat extends BigNum
 
         return $nextAttempt;
     }
+
+    /**
+     * @param BigInt|string|integer $powNum
+     * @return BigFloat
+     */
+    public function pow($powNum)
+    {
+        if (is_numeric($powNum) || is_int($powNum))
+            $powNum = new BigInt($powNum);
+        
+        $numOfDecimalPlaces = (new BigInt($this->countNumOfDecimalPlaces()))->multiply($powNum);
+        $numNoDecimalPoint = $this->removeDecPoints();
+
+        $baseNum = (new BigInt($numNoDecimalPoint))->pow($powNum);
+        $this->copy($baseNum);
+
+        $this->addDecimalPoint($numOfDecimalPlaces);
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    private function countNumOfDecimalPlaces()
+    {
+        $decimalPointPos = stripos($this->number, '.');
+        $decimalNumPart = substr($this->number, $decimalPointPos + 1);
+        return strlen($decimalNumPart);
+    }
+
+    /**
+     * @return string
+     */
+    private function removeDecPoints()
+    {
+        return str_replace('.', '', $this->number);
+    }
+
+    /**
+     * @param BigInt|string|integer $numOfDecimalPlaces
+     * @return BigNum
+     */
+    private function addDecimalPoint($numOfDecimalPlaces)
+    {
+        $wholeNumberPart = substr($this->number, 0, -$numOfDecimalPlaces->number);
+        if (strlen($wholeNumberPart) == 0)
+            $wholeNumberPart = '0';
+
+        $decimalPlacesPart = substr($this->number, -$numOfDecimalPlaces->number);
+        
+        $decimalPlacesPartLen = strlen($decimalPlacesPart);
+        $numOfDecimalPlacesLen = (int) $numOfDecimalPlaces->number;
+        if ($decimalPlacesPartLen != $numOfDecimalPlacesLen) {
+            $decPlacesDiff = $numOfDecimalPlacesLen - $decimalPlacesPartLen;
+            $decimalPlacesPart = str_repeat('0', $decPlacesDiff) . $decimalPlacesPart;
+        }
+
+        $this->number =  $wholeNumberPart.'.'.$decimalPlacesPart;             
+
+        return $this;
+    }
 }
