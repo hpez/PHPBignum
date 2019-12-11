@@ -201,7 +201,7 @@ class BigFloat extends BigNum
         if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
         
-        $numOfDecimalPlaces = (new BigInt($this->countNumOfDecimalPlaces()))->multiply($powNum);
+        $numOfDecimalPlaces = (new BigInt($this->decLength()))->multiply($powNum);
         $numNoDecimalPoint = $this->removeDecPoints();
 
         $baseNum = (new BigInt($numNoDecimalPoint))->pow($powNum);
@@ -210,16 +210,6 @@ class BigFloat extends BigNum
         $this->addDecimalPoint($numOfDecimalPlaces);
 
         return $this;
-    }
-
-    /**
-     * @return int
-     */
-    private function countNumOfDecimalPlaces()
-    {
-        $decimalPointPos = stripos($this->number, '.');
-        $decimalNumPart = substr($this->number, $decimalPointPos + 1);
-        return strlen($decimalNumPart);
     }
 
     /**
