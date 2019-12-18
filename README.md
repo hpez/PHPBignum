@@ -77,33 +77,39 @@ $bigInt12 = new BigInt('1');
 $bigInt11->pow($bigInt12);
 echo $bigInt11; // "777777"
 
+// BigFloat Power
+$bigFloat9 = new BigFloat('12345.12345');
+$bigInt13 = new BigInt('3');
+$bigFloat9->pow($bigInt13);
+echo $bigFloat9 // "1881422405168.320420453463625"
+
 // BigInteger Square Root
-$bigInt13 = new BigInt('10000');
-$bigInt13->sqrt();
-echo $bigInt13; // "100"
+$bigInt14 = new BigInt('10000');
+$bigInt15->sqrt();
+echo $bigInt14; // "100"
 
 // BigFloat Square Root
-$bigFloat9 = new BigFloat('2');
-$bigFloat9->sqrt(7);
-echo $bigFloat9; // "1.4142136"
+$bigFloat10 = new BigFloat('2');
+$bigFloat11->sqrt(7);
+echo $bigFloat10; // "1.4142136"
 
 // BigInteger Lesser-Than
-$bigInt14 = new BigInt('1234567890');
-$bigInt15 = new BigInt('1234567891');
-echo $bigInt14->isLesserThan($bigInt15); // True
-
-$bigInt16 = new BigInt('1234567891');
+$bigInt16 = new BigInt('1234567890');
 $bigInt17 = new BigInt('1234567891');
-echo $bigInt16->isLesserThan($bigInt17); // False
+echo $bigInt16->isLesserThan($bigInt17); // True
+
+$bigInt18 = new BigInt('1234567891');
+$bigInt19 = new BigInt('1234567891');
+echo $bigInt18->isLesserThan($bigInt19); // False
 
 // BigInteger Bigger-Than
-$bigInt18 = new BigInt('1234567891');
-$bigInt19 = new BigInt('1234567890');
-echo $bigInt18->isBiggerThan($bigInt19); // True
+$bigInt20 = new BigInt('1234567891');
+$bigInt21 = new BigInt('1234567890');
+echo $bigInt20->isBiggerThan($bigInt21); // True
 
-$bigInt21 = new BigInt('1234567891');
 $bigInt22 = new BigInt('1234567891');
-echo $bigInt21->isBiggerThan($bigInt22); // False
+$bigInt23 = new BigInt('1234567891');
+echo $bigInt22->isBiggerThan($bigInt23); // False
 
 ```
 
