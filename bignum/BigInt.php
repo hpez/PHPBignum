@@ -271,18 +271,13 @@ class BigInt extends BigNum
             $this->number = (new BigInt('1'))->number;
             return $this;
         } else {
-            $this->number = $this->product(1, $this)->number;
+            $this->number = $this->product(new BigInt('1'), $this)->number;
             return $this;
         }
     } 
 
     private function product($first_number, $last_number) : BigInt
     { 
-        if (is_numeric($first_number) || is_int($first_number))
-            $first_number = new BigInt($first_number);
-        if (is_numeric($last_number) || is_int($last_number))
-            $last_number = new BigInt($last_number);
-        
         $difference = new BigInt($last_number);
         $difference->sub($first_number);
 

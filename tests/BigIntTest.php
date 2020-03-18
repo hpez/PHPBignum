@@ -176,6 +176,12 @@ class BigIntTest extends TestCase
 
     public function testFactorialWorks(): void
     {
+        $bigInt1 = new BigInt('0');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('1'));
+
+        $bigInt1 = new BigInt('1');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('1'));
+
         $bigInt1 = new BigInt('20');
         $this->assertEquals($bigInt1->factorial(), new BigInt('2432902008176640000'));
         
