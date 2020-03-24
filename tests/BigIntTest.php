@@ -173,4 +173,19 @@ class BigIntTest extends TestCase
         $bigInt1 = new BigInt('125565743411314940280117058839559235348721155386037390522297885292681173306025');
         $this->assertEquals($bigInt1->sqrt(), new BigInt('354352569358985938593895384925823985395'));
     }
+
+    public function testFactorialWorks(): void
+    {
+        $bigInt1 = new BigInt('0');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('1'));
+
+        $bigInt1 = new BigInt('1');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('1'));
+
+        $bigInt1 = new BigInt('20');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('2432902008176640000'));
+        
+        $bigInt1 = new BigInt('50');
+        $this->assertEquals($bigInt1->factorial(), new BigInt('30414093201713378043612608166064768844377641568960512000000000000'));
+    }
 }

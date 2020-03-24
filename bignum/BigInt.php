@@ -261,4 +261,63 @@ class BigInt extends BigNum
         $this->number = $result;
         return $this;
     }
+
+    /**
+     * @return BigInt|BigNum
+     */
+    public function factorial()
+    { 
+        if ($this->equals(0)) {
+            $this->number = (new BigInt('1'))->number;
+            return $this;
+        } else {
+            $this->number = $this->product(new BigInt('1'), $this)->number;
+            return $this;
+        }
+    } 
+
+    private function product($first_number, $last_number) : BigInt
+    { 
+        $difference = new BigInt($last_number);
+        $difference->sub($first_number);
+
+        $middle = new BigInt($last_number);
+        $middle->add($first_number);
+        $middle->div(2);
+
+        $first_number_copy = new BigInt($first_number);
+
+        $result = new BigInt(1);
+
+        if ($difference->equals(0)) {
+            return new BigInt(1);
+        } else {
+            return $this->productCalculator($middle, $difference, $result, $first_number, $first_number_copy, $last_number);
+        }
+    } 
+
+    private function productCalculator($middle, $difference, $result, $first_number, $first_number_copy, $last_number) 
+    {
+        if ($difference->equals(1)) {
+            $result->multiply($first_number_copy);
+            $result->multiply($first_number_copy->add(1));
+            return $result;
+        } else if ($difference->equals(2)) {
+            $result->multiply($first_number_copy);
+            $result->multiply($first_number_copy->add(1));
+            $result->multiply($first_number_copy->add(1));
+            return $result;
+        } else if ($difference->equals(3)) {
+            $result->multiply($first_number_copy);
+            $result->multiply($first_number_copy->add(1));
+            $result->multiply($first_number_copy->add(1));
+            $result->multiply($first_number_copy->add(1));
+            return $result;
+        } else {
+            $result->multiply($this->product($middle, $last_number));
+            $middle->sub(1);
+            $result->multiply($this->product($first_number, $middle));
+            return $result; 
+        }
+    }
 }
