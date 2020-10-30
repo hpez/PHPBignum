@@ -160,6 +160,11 @@ class BigFloat extends BigNum
             $firstInt->number[$lastIndex-1] = $number;
         }
 
+        if ($precisionCount > $firstInt->length()) {
+            return new BigFloat('0.' . str_repeat('0', $precisionCount - $firstInt->length())
+                . substr($firstInt->number, 0, $precision - 1));
+        }
+
         return new BigFloat(substr($firstInt->number, 0, $firstInt->length() - $precision).'.'
             .substr($firstInt->number,$firstInt->length() - $precision, $precision - 1));
     }
@@ -200,7 +205,7 @@ class BigFloat extends BigNum
     {
         if (is_numeric($powNum) || is_int($powNum))
             $powNum = new BigInt($powNum);
-        
+
         $numOfDecimalPlaces = (new BigInt($this->decLength()))->multiply($powNum);
         $numNoDecimalPoint = $this->removeDecPoints();
 
@@ -231,7 +236,7 @@ class BigFloat extends BigNum
             $wholeNumberPart = '0';
 
         $decimalPlacesPart = substr($this->number, -$numOfDecimalPlaces->number);
-        
+
         $decimalPlacesPartLen = strlen($decimalPlacesPart);
         $numOfDecimalPlacesLen = (int) $numOfDecimalPlaces->number;
         if ($decimalPlacesPartLen != $numOfDecimalPlacesLen) {
@@ -239,7 +244,7 @@ class BigFloat extends BigNum
             $decimalPlacesPart = str_repeat('0', $decPlacesDiff) . $decimalPlacesPart;
         }
 
-        $this->number =  $wholeNumberPart.'.'.$decimalPlacesPart;             
+        $this->number =  $wholeNumberPart.'.'.$decimalPlacesPart;
 
         return $this;
     }

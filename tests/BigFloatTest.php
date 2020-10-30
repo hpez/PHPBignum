@@ -18,14 +18,14 @@ class BigFloatTest extends TestCase
             new BigFloat('777777.331'),
             $bigFloat1->add($bigFloat2)
         );
-        
+
         $bigFloat1 = new BigFloat('1378217817817842.121438218481312');
         $bigFloat2 = new BigFloat('8139829181.42424124');
         $this->assertEquals(
             new BigFloat('1378225957647023.545679458481312'),
             $bigFloat1->add($bigFloat2)
         );
-        
+
         $bigFloat1 = new BigFloat('8139829181.42424124');
         $bigFloat2 = new BigFloat('1378217817817842.121438218481312');
         $this->assertEquals(
@@ -76,12 +76,15 @@ class BigFloatTest extends TestCase
         );
     }
 
-    public function testDivWorks(): void
+    /**
+     * @dataProvider divisionDataProvider
+     */
+    public function testDivWorks(string $numerator, string $denominator, string $expected): void
     {
-        $bigFloat1 = new BigFloat('123456.111');
-        $bigFloat2 = new BigFloat('654321.22');
+        $bigFloat1 = new BigFloat($numerator);
+        $bigFloat2 = new BigFloat($denominator);
         $this->assertEquals(
-            new BigFloat('0.188678'),
+            new BigFloat($expected),
             $bigFloat1->div($bigFloat2)
         );
     }
@@ -96,27 +99,6 @@ class BigFloatTest extends TestCase
     {
         $bigFloat = new BigFloat('9.0');
         $this->assertEquals(new BigFloat('18.0'), $bigFloat->add(9));
-    }
-
-    public function testDivWorks2(): void
-    {
-        $bigFloat1 = new BigFloat('9');
-        $bigFloat2 = new BigFloat('3.00001');
-        $this->assertEquals(
-            new BigFloat('2.999990'),
-            $bigFloat1->div($bigFloat2)
-        );
-    }
-
-    public function testDivWorks3(): void
-    {
-        $bigFloat1 = new BigFloat('0.000552');
-        $bigFloat2 = new BigFloat('6.000184');
-        $this->assertEquals(
-            new BigFloat('0.000092'),
-            $bigFloat1->
-            div($bigFloat2)
-        );
     }
 
     public function testSqrt(): void
@@ -160,6 +142,17 @@ class BigFloatTest extends TestCase
         $this->assertEquals(new BigFloat('1881676377434183981909562.699940347954480361860897069'), $bigFloat5->pow($bigInt5));
 
         $bigFloat6 = new BigFloat('1.23');
-        $this->assertEquals(new BigFloat('1.860867'), $bigFloat6->pow(3));        
+        $this->assertEquals(new BigFloat('1.860867'), $bigFloat6->pow(3));
+    }
+
+    public function divisionDataProvider(): array
+    {
+        // Numerator, Denominator, Expected result
+        return [
+            ['123456.111', '654321.22', '0.188678'],
+            ['9', '3.00001', '2.999990'],
+            ['0.000552', '6.000184', '0.000092'],
+            ['3.1415926535898', '180', '0.0174532'],
+        ];
     }
 }
